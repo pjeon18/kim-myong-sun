@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import Navbar from "./Navbar";
+
 export default function ClassicHome() {
   const sections = [
     {
@@ -21,7 +23,9 @@ export default function ClassicHome() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-black text-white">
       {/* Archive Header */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -68,6 +72,7 @@ export default function ClassicHome() {
         Go to Exhibit
       </button>
     </div>
-  </div>
+      </div>
+    </>
   );
 }
