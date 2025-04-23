@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import About from "./components/About";
+import Books from "./components/Books";
+import Footer from "./components/Footer";
+import Exhibit from "./components/Exhibit"; // 👈 import the new Exhibit page
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="scroll-smooth dark:bg-black dark:text-white">
+        <Navbar />
+
+        <Routes>
+          {/* Home Page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <About />
+                <Books />
+                <Footer />
+              </>
+            }
+          />
+
+          {/* Exhibit Page */}
+          <Route path="/exhibit" element={<Exhibit />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
