@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 
 export default function PetalOverlay() {
-  const petals = Array.from({ length: 20 });
+  const petals = Array.from({ length: 25 });
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
       {petals.map((_, i) => {
         const size = 6 + Math.random() * 4;
         const left = `${Math.random() * 100}vw`;
-        const delay = i * 0.5;
+        const delay = i * 0.3;
         const duration = 12 + Math.random() * 10;
         const wiggleAmplitude = 20 + Math.random() * 10;
         return (

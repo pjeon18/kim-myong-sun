@@ -27,18 +27,18 @@ export default function TypewriterMultiline({ lines = [], className, onComplete,
         return updated;
       });
       charRef.current++;
-    }, 80);
+    }, 120);
     return () => clearInterval(interval);
   }, [lines, onComplete]);
 
   const currentTypingLine = displayedLines.findIndex((l, i) => l.length < (lines[i]?.length || 0));
 
   return (
-    <div className="text-left max-w-5xl mx-auto">
+    <div className="text-left max-w-2xl mx-auto px-4">
       {displayedLines.map((line, i) => (
         <h1
           key={i}
-          className={`${className} ${colorClass} ${i === 0 ? "" : "mt-4"}`}
+          className={`${className} ${colorClass} ${i === 0 ? "" : "mt-8"}`}
         >
           {line}
           {i === currentTypingLine && isTyping && <span className="animate-pulse">|</span>}
