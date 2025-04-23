@@ -62,7 +62,7 @@ export default function HomePage() {
 
       {/* Biography Section */}
       <section className="min-h-screen flex flex-col justify-center px-8 py-32">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -72,7 +72,7 @@ export default function HomePage() {
             <img
               src={process.env.PUBLIC_URL + '/author.jpg'}
               alt="Kim Myŏng Sun portrait"
-              className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-xl border-4 border-pink-200/60 mx-auto md:mx-0 mb-8 md:mb-0"
+              className="w-48 h-48 md:w-64 md:h-64 shadow-xl border-4 border-pink-200/60 mx-auto md:mx-0 mb-8 md:mb-0 bg-black"
             />
           </motion.div>
           <motion.div

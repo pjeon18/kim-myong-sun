@@ -27,17 +27,13 @@ export default function ClassicHome() {
       <Navbar />
       <div className="min-h-screen bg-black text-white">
       {/* Archive Header */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="py-32 px-8 text-center"
-      >
+      {/* Archive Title and Subtitle */}
+      <div className="pt-32 pb-10 px-8 text-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-8">Archive</h1>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto">
           A chronological journey through Kim Myŏng Sun's life and works
         </p>
-      </motion.div>
+      </div>
 
       {/* Timeline Sections */}
       <div className="max-w-4xl mx-auto px-8 pb-32">
@@ -64,14 +60,15 @@ export default function ClassicHome() {
           </motion.div>
         ))}
       </div>
-    <div className="flex flex-col items-center mt-16 mb-10">
-      <button
-        onClick={() => window.location.href='/exhibit'}
-        className="px-8 py-4 text-2xl bg-pink-500 hover:bg-pink-600 text-white rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
-      >
-        Go to Exhibit
-      </button>
-    </div>
+      {/* Bottom navigation button */}
+      <div className="flex flex-col items-center mt-16 mb-10">
+        <button
+          onClick={() => window.location.href='/exhibit'}
+          className="px-8 py-4 text-2xl bg-pink-500 hover:bg-pink-600 text-white rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+        >
+          Go to Exhibit
+        </button>
+      </div>
       </div>
     </>
   );
