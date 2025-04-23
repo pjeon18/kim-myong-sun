@@ -8,12 +8,13 @@ import ExhibitNav from "./ExhibitNav";
 const poems = [
   {
     id: 1,
-    title: "Midnight Waiting",
+    title: "The Battle",
     text: [
-      "Beneath the moonlit sky I wait,",
-      "For silence deep and thoughts sedate.",
-      "The stars arrive in slow parade,",
-      "And time dissolves where dreams are made."
+      "There was an old soldier\nWho plowed a field with his weapon\nFor he was injured all over from long battles\nAnd thus hated fighting in battles.\n\n",
+      "But the furrows were unyielding\nAnd the landlord was vicious,\nSo there was no harvest\nEven after sowing and weeding.\n\n",
+      "So, one day, the old soldier,\nWas paralyzed in sleep like a shooting rifle,\nStifled by heavy thoughts.\n\n",
+      "Oh, how strange—this soldier,\nWhile sleeping after dumping his weapon,\nDied with bruises all over his body\nAs if he fought in his dream.\n\n",
+      "People turned their heads.\nThere are battles whether you are awake or asleep,\nSo being alive and dead must be the same.\nSaying so, each of them tensed both arms.\n\n",
     ]
   },
   // ... (remaining poems)
