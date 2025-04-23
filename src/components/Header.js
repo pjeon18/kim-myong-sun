@@ -34,7 +34,7 @@ function Header() {
       initial={{ opacity: 0, y: -30 }}
       animate={controls}
       transition={{ duration: 0.8 }}
-      className="bg-blue-900 text-white p-6 text-center shadow-md"
+      className="bg-red-900 text-white p-6 text-center shadow-md"
     >
       <h1 className="text-3xl font-bold">Author Name</h1>
       <p className="text-lg">Official Website</p>

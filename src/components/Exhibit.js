@@ -1,79 +1,96 @@
-import { useEffect } from "react";
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import PoemBlock from "./PoemBlock";
+import PetalOverlay from "./PetalOverlay";
+import TypewriterMultiline from "./TypewriterMultiline";
+import ExhibitNav from "./ExhibitNav";
 
-// Sample poems or stanzas
 const poems = [
   {
     id: 1,
-    text: "Beneath the moonlit sky I wait,\nFor silence deep and thoughts sedate.\nThe stars arrive in slow parade,\nAnd time dissolves where dreams are made."
+    title: "Midnight Waiting",
+    text: [
+      "Beneath the moonlit sky I wait,",
+      "For silence deep and thoughts sedate.",
+      "The stars arrive in slow parade,",
+      "And time dissolves where dreams are made."
+    ]
   },
-  {
-    id: 2,
-    text: "The ink runs wild across the page,\nA storm of thought, a poet's rage.\nYet in the chaos, rhythm grows—\nA quiet pulse the reader knows."
-  },
-  {
-    id: 3,
-    text: "This stanza here could float or spin,\nWith light or dark depending when.\nLet motion tell the tale with grace,\nAnd poetry reshape the space."
-  }
+  // ... (remaining poems)
 ];
 
-function PoemBlock({ text }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
-
-  useEffect(() => {
-    if (inView) controls.start({ opacity: 1, y: 0 });
-  }, [inView, controls]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={controls}
-      transition={{ duration: 0.8 }}
-      className="max-w-2xl mx-auto my-16 px-4 text-center"
-    >
-      <p className="text-xl leading-relaxed whitespace-pre-line font-serif text-gray-800 dark:text-gray-100">
-        {text}
-      </p>
-    </motion.div>
-  );
-}
-
 export default function Exhibit() {
+  const [currentPoemIndex, setCurrentPoemIndex] = useState(-1);
+  const [showNav, setShowNav] = useState(false);
+  const [typewriterComplete, setTypewriterComplete] = useState(false);
+
+  const nextPoem = () => {
+    setShowNav(false);
+    setCurrentPoemIndex((prev) => (prev + 1 < poems.length ? prev + 1 : prev));
+  };
+
+  const prevPoem = () => {
+    setShowNav(false);
+    setCurrentPoemIndex((prev) => (prev - 1 >= 0 ? prev - 1 : prev));
+  };
+
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        key={currentPoemIndex}
+        initial={{ opacity: 0, backgroundColor: "#000" }}
+        animate={{ opacity: 1, backgroundColor: "#000" }}
+        exit={{ opacity: 0, backgroundColor: "#000" }}
         transition={{ duration: 1 }}
-        className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 px-6 pt-20 relative"
+        className="min-h-screen text-white px-6 pt-40 pb-40 relative overflow-x-hidden"
       >
-        {/* Scroll Progress Bar */}
-        <motion.div
-          className="fixed top-0 left-0 h-1 bg-blue-500 z-50"
-          style={{ width: "100%" }}
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 3, ease: "easeInOut" }}
-        />
+        <PetalOverlay />
 
-        {/* Splash intro */}
-        <motion.h1
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="text-5xl font-extrabold text-center mb-20 tracking-widest"
-        >
-          Exhibit
-        </motion.h1>
+        {currentPoemIndex === -1 && (
+          <>
+            <TypewriterMultiline
+              lines={["The Digital", "Kim Myung Sun", "Exhibit"]}
+              className="text-5xl md:text-8xl font-extrabold tracking-widest"
+              onComplete={() => setTypewriterComplete(true)}
+            />
+            {typewriterComplete && (
+              <>
+                <TypewriterMultiline
+                  lines={["A Collection of Kim's Poems"]}
+                  className="text-4xl md:text-6xl font-semibold tracking-wide mt-20"
+                  colorClass="text-yellow-400 drop-shadow-[0_0_10px_rgba(255,255,0,0.5)]"
+                />
+                <div className="text-center mt-20">
+                  <button
+                    onClick={() => setCurrentPoemIndex(0)}
+                    className="text-white underline text-lg hover:text-gray-300"
+                  >
+                    Begin Exhibit
+                  </button>
+                </div>
+              </>
+            )}
+          </>
+        )}
 
-        {/* Poem blocks */}
-        {poems.map((poem) => (
-          <PoemBlock key={poem.id} text={poem.text} />
-        ))}
+        {currentPoemIndex >= 0 && (
+          <PoemBlock
+            title={poems[currentPoemIndex].title}
+            text={poems[currentPoemIndex].text}
+            onComplete={() => setShowNav(true)}
+          />
+        )}
+
+        {showNav && (
+          <ExhibitNav
+            isVisible={true}
+            onToggle={() => {}}
+            onPrev={prevPoem}
+            onNext={nextPoem}
+            showPrev={currentPoemIndex > 0}
+            showNext={currentPoemIndex < poems.length - 1}
+          />
+        )}
       </motion.div>
     </AnimatePresence>
   );

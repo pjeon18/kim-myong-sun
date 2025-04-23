@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [navVisible, setNavVisible] = useState(true);
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -53,79 +55,79 @@ function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
       className={`sticky top-0 z-50 transition-all ${
-        scrolled ? "shadow-md bg-blue-900" : "bg-blue-900"
+        scrolled ? "shadow-md bg-pink-900" : "bg-pink-900"
       } text-white`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold tracking-wide">
-          Author Name
-        </Link>
+        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+  <Link to="/" className="text-2xl font-bold tracking-wide">
+    Author Name
+  </Link>
 
-        <div className="space-x-6 hidden md:flex items-center">
-          {navLinks.map((link) =>
-            link.isAnchor ? (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="hover:underline"
-              >
-                {link.label}
-              </button>
-            ) : (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`hover:underline ${
-                  location.pathname === link.href ? "font-bold underline" : ""
-                }`}
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+  <div className="flex items-center gap-4">
+    {/* Collapse toggle (visible always) */}
+    <button
+      onClick={() => setNavVisible((prev) => !prev)}
+      className="text-white text-xl hover:text-gray-300"
+      aria-label="Toggle navbar"
+    >
+      {navVisible ? "▲" : "▼"}
+    </button>
 
-          <button
-            onClick={toggleDarkMode}
-            className="ml-4 text-sm px-3 py-1 rounded border border-white hover:bg-white hover:text-blue-900 transition"
-          >
-            Toggle Dark
-          </button>
-        </div>
+    {/* Desktop menu only visible when expanded */}
+    {navVisible && (
+      <div className="hidden md:flex items-center space-x-6">
+        {navLinks.map((link) =>
+          link.isAnchor ? (
+            <button
+              key={link.href}
+              onClick={() => scrollToSection(link.href)}
+              className="hover:underline"
+            >
+              {link.label}
+            </button>
+          ) : (
+            <Link
+              key={link.href}
+              to={link.href}
+              className={`hover:underline ${
+                location.pathname === link.href ? "font-bold underline" : ""
+              }`}
+            >
+              {link.label}
+            </Link>
+          )
+        )}
 
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden focus:outline-none"
-          aria-label="Toggle navigation menu"
+          onClick={toggleDarkMode}
+          className="ml-4 text-sm px-3 py-1 rounded border border-white hover:bg-white hover:text-pink-900 transition"
         >
-          <svg
-            className="w-6 h-6 fill-current text-white"
-            viewBox="0 0 24 24"
-          >
-            {isOpen ? (
-              <path d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
+          Toggle Dark
         </button>
       </div>
+    )}
+  </div>
+</div>
 
+
+
+      {/* Mobile Dropdown */}
       <AnimatePresence>
-        {isOpen && (
+        {isOpen && navVisible && (
           <motion.div
             key="mobile-menu"
             initial="hidden"
             animate="visible"
             exit="exit"
             variants={menuVariants}
-            className="md:hidden bg-blue-800 px-4 pb-4"
+            className="md:hidden bg-pink-800 px-4 pb-4"
           >
             {navLinks.map((link) =>
               link.isAnchor ? (
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="block w-full text-left py-2 border-b border-blue-700 hover:underline"
+                  className="block w-full text-left py-2 border-b border-pink-700 hover:underline"
                 >
                   {link.label}
                 </button>
@@ -134,7 +136,7 @@ function Navbar() {
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block py-2 border-b border-blue-700 hover:underline ${
+                  className={`block py-2 border-b border-pink-700 hover:underline ${
                     location.pathname === link.href ? "font-bold underline" : ""
                   }`}
                 >
