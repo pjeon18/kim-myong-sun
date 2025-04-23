@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kim-myung-sun/static/css/main.40d43e92.css",
-    "main.js": "/kim-myung-sun/static/js/main.13384d93.js",
+    "main.css": "/kim-myung-sun/static/css/main.fb4cde64.css",
+    "main.js": "/kim-myung-sun/static/js/main.b0dc818c.js",
     "static/js/453.a849a989.chunk.js": "/kim-myung-sun/static/js/453.a849a989.chunk.js",
     "index.html": "/kim-myung-sun/index.html",
-    "main.40d43e92.css.map": "/kim-myung-sun/static/css/main.40d43e92.css.map",
-    "main.13384d93.js.map": "/kim-myung-sun/static/js/main.13384d93.js.map",
+    "main.fb4cde64.css.map": "/kim-myung-sun/static/css/main.fb4cde64.css.map",
+    "main.b0dc818c.js.map": "/kim-myung-sun/static/js/main.b0dc818c.js.map",
     "453.a849a989.chunk.js.map": "/kim-myung-sun/static/js/453.a849a989.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.40d43e92.css",
-    "static/js/main.13384d93.js"
+    "static/css/main.fb4cde64.css",
+    "static/js/main.b0dc818c.js"
   ]
 }
