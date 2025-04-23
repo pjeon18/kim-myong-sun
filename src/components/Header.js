@@ -36,7 +36,7 @@ function Header() {
       transition={{ duration: 0.8 }}
       className="bg-red-900 text-white p-6 text-center shadow-md"
     >
-      <h1 className="text-3xl font-bold">Author Name</h1>
+      <h1 className="text-3xl font-bold">Kim Myŏng Sun: Unearthing the Story of Korea's Earliest Female Literary Figure</h1>
       <p className="text-lg">Official Website</p>
     </motion.header>
   );

@@ -22,7 +22,7 @@ export default function PoemBlock({ title, text, onComplete }) {
           }
           return prev + 1;
         });
-      }, 1000);
+      }, 1000); // Controls when the next line appears
       return () => clearInterval(interval);
     }
   }, [inView, text.length, onComplete]);
@@ -33,7 +33,7 @@ export default function PoemBlock({ title, text, onComplete }) {
       initial={{ opacity: 0, y: 40 }}
       animate={controls}
       transition={{ duration: 0.8 }}
-      className="max-w-2xl mx-auto my-32 px-4 text-center"
+      className="max-w-3xl mx-auto my-32 px-4 text-left"
     >
       <h2 className="text-3xl font-bold mb-12 text-white">{title}</h2>
       {text.slice(0, visibleLines).map((line, i) => (
@@ -41,8 +41,8 @@ export default function PoemBlock({ title, text, onComplete }) {
           key={i}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: i * 0.3 }}
-          className="text-xl font-serif leading-relaxed text-white mb-2"
+          transition={{ duration: 2, delay: i * 0.5 }}
+          className="text-xl font-serif leading-relaxed text-white mb-6"
         >
           {line}
         </motion.p>

@@ -3,16 +3,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [navVisible, setNavVisible] = useState(true);
 
   const location = useLocation();
   const navigate = useNavigate();
 
-  const toggleDarkMode = () => {
-    document.documentElement.classList.toggle("dark");
-  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -22,9 +17,7 @@ function Navbar() {
 
   const navLinks = useMemo(
     () => [
-      { label: "About", href: "about", isAnchor: true },
-      { label: "Books", href: "books", isAnchor: true },
-      { label: "Contact", href: "contact", isAnchor: true },
+      { label: "Archive", href: "/classic", isAnchor: false },
       { label: "Exhibit", href: "/exhibit", isAnchor: false },
     ],
     []
@@ -40,7 +33,6 @@ function Navbar() {
     } else {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     }
-    setIsOpen(false);
   };
 
   const menuVariants = {
@@ -54,28 +46,16 @@ function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className={`sticky top-0 z-50 transition-all ${
-        scrolled ? "shadow-md bg-pink-900" : "bg-pink-900"
-      } text-white`}
+      className={`sticky top-0 z-50 transition-all text-white bg-gradient-to-b from-pink-300/40 via-pink-300/20 to-transparent` }
     >
-        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-  <Link to="/" className="text-2xl font-bold tracking-wide">
-    Author Name
+        <div className="max-w-7xl mx-auto px-4 py-8 flex items-center min-h-[6rem]">
+  <Link to="/" className="text-lg md:text-2xl font-bold tracking-wide whitespace-nowrap overflow-x-auto text-left">
+    <span className="italic">Kim Myŏng Sun</span>: Unearthing the Story of Korea's Earliest Female Literary Figure
   </Link>
 
-  <div className="flex items-center gap-4">
-    {/* Collapse toggle (visible always) */}
-    <button
-      onClick={() => setNavVisible((prev) => !prev)}
-      className="text-white text-xl hover:text-gray-300"
-      aria-label="Toggle navbar"
-    >
-      {navVisible ? "▲" : "▼"}
-    </button>
-
-    {/* Desktop menu only visible when expanded */}
-    {navVisible && (
-      <div className="hidden md:flex items-center space-x-6">
+  <div className="flex items-center gap-4 ml-8">
+    {/* Desktop menu */}
+    <div className="hidden md:flex items-center space-x-6">
         {navLinks.map((link) =>
           link.isAnchor ? (
             <button
@@ -98,65 +78,9 @@ function Navbar() {
           )
         )}
 
-        <button
-          onClick={toggleDarkMode}
-          className="ml-4 text-sm px-3 py-1 rounded border border-white hover:bg-white hover:text-pink-900 transition"
-        >
-          Toggle Dark
-        </button>
       </div>
-    )}
+    </div>
   </div>
-</div>
-
-
-
-      {/* Mobile Dropdown */}
-      <AnimatePresence>
-        {isOpen && navVisible && (
-          <motion.div
-            key="mobile-menu"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={menuVariants}
-            className="md:hidden bg-pink-800 px-4 pb-4"
-          >
-            {navLinks.map((link) =>
-              link.isAnchor ? (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="block w-full text-left py-2 border-b border-pink-700 hover:underline"
-                >
-                  {link.label}
-                </button>
-              ) : (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`block py-2 border-b border-pink-700 hover:underline ${
-                    location.pathname === link.href ? "font-bold underline" : ""
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
-
-            <button
-              onClick={() => {
-                toggleDarkMode();
-                setIsOpen(false);
-              }}
-              className="block w-full text-left py-2 hover:underline"
-            >
-              Toggle Dark
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.nav>
   );
 }

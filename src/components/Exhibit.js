@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PoemBlock from "./PoemBlock";
-import PetalOverlay from "./PetalOverlay";
 import TypewriterMultiline from "./TypewriterMultiline";
 import ExhibitNav from "./ExhibitNav";
+
 
 const poems = [
   {
@@ -37,20 +37,21 @@ export default function Exhibit() {
 
   return (
     <AnimatePresence mode="wait">
+      {/* Multi-stop custom gradient background */}
+      <div className="fixed inset-0 -z-10 pointer-events-none" style={{background: "linear-gradient(to bottom, #090909 0%, #181e2a 50%, #090909 100%)"}} />
       <motion.div
+        className="relative z-10 min-h-screen text-white px-6 pt-40 pb-40 overflow-x-hidden"
         key={currentPoemIndex}
-        initial={{ opacity: 0, backgroundColor: "#000" }}
-        animate={{ opacity: 1, backgroundColor: "#000" }}
-        exit={{ opacity: 0, backgroundColor: "#000" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
-        className="min-h-screen text-white px-6 pt-40 pb-40 relative overflow-x-hidden"
       >
-        <PetalOverlay />
 
         {currentPoemIndex === -1 && (
           <>
             <TypewriterMultiline
-              lines={["The Digital", "Kim Myung Sun", "Exhibit"]}
+              lines={["The Digital", "Kim Myŏng Sun", "Exhibit"]}
               className="text-5xl md:text-8xl font-extrabold tracking-widest"
               onComplete={() => setTypewriterComplete(true)}
             />
@@ -91,6 +92,17 @@ export default function Exhibit() {
             showPrev={currentPoemIndex > 0}
             showNext={currentPoemIndex < poems.length - 1}
           />
+        )}
+        {/* Button to citations page after last poem */}
+        {showNav && currentPoemIndex === poems.length - 1 && (
+          <div className="flex flex-col items-center mt-16 mb-10">
+            <button
+              onClick={() => window.location.href='/citations'}
+              className="px-8 py-4 text-2xl bg-pink-500 hover:bg-pink-600 text-white rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+            >
+              View Citations
+            </button>
+          </div>
         )}
       </motion.div>
     </AnimatePresence>

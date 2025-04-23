@@ -1,37 +1,25 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import About from "./components/About";
-import Books from "./components/Books";
-import Footer from "./components/Footer";
-import Exhibit from "./components/Exhibit"; // 👈 import the new Exhibit page
+import HomePage from "./components/HomePage";
+import Exhibit from "./components/Exhibit";
+import ClassicHome from "./components/ClassicHome";
+import BackgroundPetals from "./components/BackgroundPetals";
+import MouseTrailPetals from "./components/MouseTrailPetals";
 
 function App() {
   return (
-    <Router>
-      <div className="scroll-smooth dark:bg-black dark:text-white">
+      <div className="relative min-h-screen overflow-hidden">
+        <BackgroundPetals />      {/* <- GLOBAL background petals */}
+        <MouseTrailPetals />      {/* <- mouse-follow petals */}
         <Navbar />
-
         <Routes>
-          {/* Home Page */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Header />
-                <About />
-                <Books />
-                <Footer />
-              </>
-            }
-          />
-
-          {/* Exhibit Page */}
+          <Route path="/" element={<HomePage />} />
           <Route path="/exhibit" element={<Exhibit />} />
+          <Route path="/classic" element={<ClassicHome />} />
         </Routes>
       </div>
-    </Router>
   );
 }
+
 
 export default App;
