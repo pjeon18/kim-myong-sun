@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./components/HomePage";
 import Exhibit from "./components/Exhibit";
-import ClassicHome from "./components/ClassicHome";
+
 import BackgroundPetals from "./components/BackgroundPetals";
 import MouseTrailPetals from "./components/MouseTrailPetals";
 
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/exhibit" element={<Exhibit />} />
-          <Route path="/classic" element={<ClassicHome />} />
+          
         </Routes>
       </div>
   );

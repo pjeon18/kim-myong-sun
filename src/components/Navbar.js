@@ -17,8 +17,9 @@ function Navbar() {
 
   const navLinks = useMemo(
     () => [
-      { label: "Archive", href: "/classic", isAnchor: false },
+      
       { label: "Exhibit", href: "/exhibit", isAnchor: false },
+      { label: "Book", href: "/citations", isAnchor: false },
     ],
     []
   );
