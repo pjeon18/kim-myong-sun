@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kim-myung-sun/static/css/main.fb4cde64.css",
-    "main.js": "/kim-myung-sun/static/js/main.b0dc818c.js",
-    "static/js/453.a849a989.chunk.js": "/kim-myung-sun/static/js/453.a849a989.chunk.js",
-    "index.html": "/kim-myung-sun/index.html",
-    "main.fb4cde64.css.map": "/kim-myung-sun/static/css/main.fb4cde64.css.map",
-    "main.b0dc818c.js.map": "/kim-myung-sun/static/js/main.b0dc818c.js.map",
-    "453.a849a989.chunk.js.map": "/kim-myung-sun/static/js/453.a849a989.chunk.js.map"
+    "main.css": "/kim-myong-sun/static/css/main.21d3883a.css",
+    "main.js": "/kim-myong-sun/static/js/main.1c0174f1.js",
+    "static/js/453.7408caac.chunk.js": "/kim-myong-sun/static/js/453.7408caac.chunk.js",
+    "index.html": "/kim-myong-sun/index.html",
+    "main.21d3883a.css.map": "/kim-myong-sun/static/css/main.21d3883a.css.map",
+    "main.1c0174f1.js.map": "/kim-myong-sun/static/js/main.1c0174f1.js.map",
+    "453.7408caac.chunk.js.map": "/kim-myong-sun/static/js/453.7408caac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb4cde64.css",
-    "static/js/main.b0dc818c.js"
+    "static/css/main.21d3883a.css",
+    "static/js/main.1c0174f1.js"
   ]
 }
