@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kim-myong-sun/static/css/main.21d3883a.css",
-    "main.js": "/kim-myong-sun/static/js/main.1c0174f1.js",
+    "main.js": "/kim-myong-sun/static/js/main.04b659fe.js",
     "static/js/453.7408caac.chunk.js": "/kim-myong-sun/static/js/453.7408caac.chunk.js",
     "index.html": "/kim-myong-sun/index.html",
     "main.21d3883a.css.map": "/kim-myong-sun/static/css/main.21d3883a.css.map",
-    "main.1c0174f1.js.map": "/kim-myong-sun/static/js/main.1c0174f1.js.map",
+    "main.04b659fe.js.map": "/kim-myong-sun/static/js/main.04b659fe.js.map",
     "453.7408caac.chunk.js.map": "/kim-myong-sun/static/js/453.7408caac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.21d3883a.css",
-    "static/js/main.1c0174f1.js"
+    "static/js/main.04b659fe.js"
   ]
 }
