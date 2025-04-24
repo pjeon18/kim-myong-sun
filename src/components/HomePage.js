@@ -49,16 +49,7 @@ export default function HomePage() {
         >
           Pioneer of Modern Korean Literature
         </motion.p>
-        <div className="flex flex-col items-center mt-16">
-    <button
-      onClick={() => navigate('/classic')}
-      className="px-8 py-4 text-2xl bg-pink-500 hover:bg-pink-600 text-white rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl mb-8"
-    >
-      Explore the Archive
-    </button>
-  </div>
-
-</section>
+      </section>
 
       {/* Biography Section */}
       <section className="min-h-screen flex flex-col justify-center px-8 py-32">
@@ -131,7 +122,7 @@ export default function HomePage() {
   viewport={{ once: true }}
   className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
 >
-            In the broader historical context, feminism in early 20th-century Korea grew from increased educational opportunities and exposure to Western feminist ideas. Women began advocating publicly for greater social rights, autonomy, and liberation from oppressive Confucian gender norms. Kim Myŏng-sun actively engaged with these feminist ideas, using her poetry and stories to subtly yet powerfully challenge entrenched patriarchal structures and cultural restrictions placed upon women. Her literary courage—especially in poems like "Flower Dream," which explored women's inner realities and suffering—laid important groundwork for later feminist literature and women's rights advocacy in Korea.
+            In the broader historical context, feminism in early 20th-century Korea grew from increased educational opportunities and exposure to Western feminist ideas. Women began advocating publicly for greater social rights, autonomy, and liberation from oppressive Confucian gender norms. Kim Myŏng-sun actively engaged with these feminist ideas, using her poetry and stories to subtly yet powerfully challenge entrenched patriarchal structures and cultural restrictions placed upon women. Her literary courage—especially in her poetry which explored women's inner realities and suffering—laid important groundwork for later feminist literature and women's rights advocacy in Korea.
           </motion.p>
         </motion.div>
       </section>
@@ -215,10 +206,10 @@ export default function HomePage() {
         >
           <h2 className="text-4xl md:text-6xl font-bold">Explore Her World</h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Step into an immersive journey through the life and works of Kim Myung Sun
+            Step into an immersive journey through the life and works of Kim Myong Sun
           </p>
           <button
-            onClick={() => navigate("/exhibit")}
+            onClick={() => navigate("/classic")}
             className="mt-8 px-8 py-4 text-xl bg-pink-500 hover:bg-pink-600 text-white rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             Enter the Exhibit

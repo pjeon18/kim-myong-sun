@@ -6,7 +6,7 @@ export default function ClassicHome() {
   const sections = [
     {
       title: "Early Life",
-      content: "Kim Myŏng Sun was born in 1896 during a transformative period in Korean history. Her early years coincided with the end of the Joseon Dynasty and Korea's emergence into the modern era."
+      content: " Myŏng Sun was born in 1896 during a transformative period in Korean history. Her early years coincided with the end of the Joseon Dynasty and Korea's emergence into the modern era."
     },
     {
       title: "Literary Journey",
@@ -18,20 +18,19 @@ export default function ClassicHome() {
     },
     {
       title: "Legacy",
-      content: "Kim Myŏng Sun's influence extends beyond her era, inspiring generations of writers who followed. Her work continues to be studied and celebrated as a cornerstone of modern Korean literature."
+      content: " Myŏng Sun's influence extends beyond her era, inspiring generations of writers who followed. Her work continues to be studied and celebrated as a cornerstone of modern Korean literature."
     }
-  ];
+  ]
 
   return (
     <>
       <Navbar />
       <div className="min-h-screen bg-black text-white">
-      {/* Archive Header */}
       {/* Archive Title and Subtitle */}
       <div className="pt-32 pb-10 px-8 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-8">Archive</h1>
+        <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">Archive</h1>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-          A chronological journey through Kim Myŏng Sun's life and works
+          A chronological journey through  Myŏng Sun's life and works
         </p>
       </div>
 
