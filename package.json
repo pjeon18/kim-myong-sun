@@ -1,8 +1,9 @@
 {
   "name": "kim-myong-sun",
   "version": "0.1.0",
-  "homepage": "https://pjeon18.github.io/kim-myong-sun",
+
   "private": true,
+  "homepage": "https://pjeon18.github.io/kim-myong-sun/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
