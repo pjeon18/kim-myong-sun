@@ -1,12 +1,10 @@
 import React from "react";
 
-import Navbar from "./Navbar";
+
 
 export default function Citations() {
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen flex flex-col items-center justify-center px-8 py-32 bg-gray-950 text-white">
+    <main className="min-h-screen flex flex-col items-center justify-center px-8 py-32 bg-gray-950 text-white">
       <h1 className="text-5xl md:text-7xl font-extrabold mb-12 text-center">Reference</h1>
       <div className="max-w-2xl bg-gray-900/80 rounded-xl shadow-xl p-8 flex flex-col items-center">
         <img
@@ -27,6 +25,5 @@ export default function Citations() {
         </a>
       </div>
     </main>
-    </>
   );
 }

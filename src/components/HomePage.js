@@ -47,7 +47,7 @@ export default function HomePage() {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-2xl md:text-3xl text-gray-300 text-center max-w-2xl mx-auto"
         >
-          Pioneer of Modern Korean Literature
+          Korea's First Female Published Writer
         </motion.p>
       </section>
 
@@ -63,7 +63,7 @@ export default function HomePage() {
             <img
               src={process.env.PUBLIC_URL + '/author.jpg'}
               alt="Kim Myŏng Sun portrait"
-              className="w-48 h-48 md:w-64 md:h-64 shadow-xl border-4 border-pink-200/60 mx-auto md:mx-0 mb-8 md:mb-0 bg-black"
+              className="w-96 md:w-[32rem] aspect-square object-cover rounded-full shadow-xl border-4 border-pink-200/60 mx-auto md:mx-0 mb-8 md:mb-0 bg-black"
             />
           </motion.div>
           <motion.div
@@ -75,26 +75,26 @@ export default function HomePage() {
           >
             <h2 className="text-6xl md:text-7xl font-extrabold text-left mb-8">The Author</h2>
             <motion.p
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1, delay: 0.2 }}
-  viewport={{ once: true }}
-  className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
->
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
+            >
+              Kim Myŏng Sun’s first published work, <span className="italic">"A Girl of Mystery"</span>, in 1917 won third prize in a journal sponsored by Chongchun, receiving high praise from other Korean male writers. However, while her male contemporaries whose work showed inspiration from Japanese literature and style were described merely as "imitative," <span className="italic">"A Girl of Mystery"</span> was unfairly scrutinized as plagiarism.
             </motion.p>
             <motion.p
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1, delay: 0.2 }}
-  viewport={{ once: true }}
-  className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
->
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
+            >
+
             </motion.p>
-          </motion.div>
-        </div>
-      </section>
+           </motion.div>
+         </div>
+       </section>
 
       {/* Feminism Section */}
       <section className="min-h-screen flex flex-col justify-center px-8 py-32">
@@ -105,24 +105,24 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-left items-start space-y-8"
         >
-          <h2 className="text-6xl md:text-7xl font-extrabold text-left mb-8">Kim Myŏng-sun and Early Korean Feminism</h2>
+          <h2 className="text-6xl md:text-7xl font-extrabold text-left mb-8">Male critics at the time cast doubt on Kim Myŏng Sun's ability to write with such sophistication and organization, despite their claims having no factual basis. Throughout her career, Kim was repeatedly targeted with baseless accusations from journals, newspapers, and fellow writers. Even during her studies abroad in Japan, the media sensationalized and dramatized her personal and romantic life, frequently publishing accounts without credible sources.</h2>
           <motion.p
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1, delay: 0.2 }}
-  viewport={{ once: true }}
-  className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
->
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
+          >
+            These media portrayals unjustly painted Kim as scandalous and focused obsessively on her connections with men, largely overlooking her significant literary contributions to Korea. Many stories circulating at the time offered wildly conflicting accounts of her early life, causing Kim considerable mental anguish. Despite the disparities in these narratives, they consistently downplayed her literary achievements, emphasizing her personal life instead.
           </motion.p>
           <motion.p
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1, delay: 0.2 }}
-  viewport={{ once: true }}
-  className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
->
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
+          >
+            Even the date of Kim's death was widely misreported; although it was generally speculated to have occurred in April 1951, closer examination of her publication history indicates that she passed away sometime between September 1954 and September 1957.
           </motion.p>
         </motion.div>
       </section>
@@ -136,7 +136,7 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-left items-start space-y-8"
         >
-          <h2 className="text-6xl md:text-7xl font-extrabold text-left mb-8">About Kim Myŏng-sun</h2>
+          <h2 className="text-6xl md:text-7xl font-extrabold text-left mb-8">It was not until the 1960s that there would be a more balanced autographical account written about her, and not until the 1970s and 1980s that her work would be analyzed in depth.</h2>
           <motion.p
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -144,9 +144,7 @@ export default function HomePage() {
   viewport={{ once: true }}
   className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
 >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
           </motion.p>
-          <h3 className="text-3xl md:text-4xl font-semibold mt-8">"Flower Dream": Themes and Significance</h3>
           <motion.p
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -154,12 +152,12 @@ export default function HomePage() {
   viewport={{ once: true }}
   className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
 >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            Her persistent dedication to writing despite continual backlash and accusations from peers highlights Kim Myŏng Sun's resilience as both a writer and a woman in Korea's early literary scene. Through an examination of her life and career, it becomes clear how significantly she paved the way for future generations of female writers in a society where women were routinely marginalized, harshly judged, and rarely acknowledged for their talent or innovative contributions.
           </motion.p>
         </motion.div>
       </section>
 
-      {/* Legacy Section */}
+      {/*  Section */}
       <section className="min-h-screen flex flex-col justify-center px-8 py-32">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -168,7 +166,7 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-left items-start space-y-8"
         >
-          <h2 className="text-6xl md:text-7xl font-extrabold text-left mb-8">Literary Legacy</h2>
+          <h2 className="text-6xl md:text-7xl font-extrabold text-left mb-8">Literary Legacy </h2>
           <motion.p
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -176,66 +174,12 @@ export default function HomePage() {
   viewport={{ once: true }}
   className="text-2xl md:text-3xl text-gray-100 leading-[2] mb-8"
 >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            Kim was instrumental in introducing Western literature to Korea, translating many classics, including Edgar Allan Poe's short stories and poetry. In the later stages of her career, Kim increasingly focused on writing poetry, publishing under various pen names, most notably T'ansil—a childhood name given by her parents.
           </motion.p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="p-6 bg-gray-900 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4">Poetry</h3>
-              <p className="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
-            </div>
-            <div className="p-6 bg-gray-900 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4">Prose</h3>
-              <p className="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
-            </div>
-            <div className="p-6 bg-gray-900 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4">Impact</h3>
-              <p className="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
-            </div>
-          </div>
+          
         </motion.div>
       </section>
 
-      {/* Timeline Section (formerly ClassicHome) */}
-      <section className="max-w-4xl mx-auto px-8 pb-32 pt-32">
-        {[
-          {
-            title: "Early Life",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus."
-          },
-          {
-            title: "Literary Journey",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus."
-          },
-          {
-            title: "Major Works",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus."
-          },
-          {
-            title: "Legacy",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus."
-          }
-        ].map((section, index, arr) => (
-          <motion.div
-            key={section.title}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="mb-24 relative"
-          >
-            {/* Timeline connector */}
-            {index < arr.length - 1 && (
-              <div className="absolute left-8 top-16 bottom-0 w-px bg-gradient-to-b from-pink-500 to-transparent" />
-            )}
-            {/* Content */}
-            <div className="relative pl-24">
-              <div className="absolute left-6 top-3 w-4 h-4 rounded-full bg-pink-500 shadow-lg shadow-pink-500/50" />
-              <h2 className="text-3xl font-bold mb-4">{section.title}</h2>
-              <p className="text-lg text-gray-300 leading-relaxed">{section.content}</p>
-            </div>
-          </motion.div>
-        ))}
-      </section>
 
       {/* Call to Action */}
       <section className="min-h-screen flex flex-col justify-center items-center px-8 py-32">
@@ -246,9 +190,9 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="text-center space-y-8"
         >
-          <h2 className="text-4xl md:text-6xl font-bold">Explore Her World</h2>
+          <h2 className="text-4xl md:text-6xl font-bold">Explore Her Work</h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Step into an immersive journey through the life and works of Kim Myong Sun
+            Step into an immersive journey through the life and works of Kim Myŏng Sun
           </p>
           <button
             onClick={() => navigate("/classic")}

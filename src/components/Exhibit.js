@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import PoemBlock from "./PoemBlock";
 import TypewriterMultiline from "./TypewriterMultiline";
 import ExhibitNav from "./ExhibitNav";
@@ -20,10 +21,12 @@ const poems = [
   // ... (remaining poems)
 ];
 
+
 export default function Exhibit() {
   const [currentPoemIndex, setCurrentPoemIndex] = useState(-1);
   const [showNav, setShowNav] = useState(false);
   const [typewriterComplete, setTypewriterComplete] = useState(false);
+  const navigate = useNavigate();
 
   const nextPoem = () => {
     setShowNav(false);
@@ -97,7 +100,7 @@ export default function Exhibit() {
         {showNav && currentPoemIndex === poems.length - 1 && (
           <div className="flex flex-col items-center mt-16 mb-10">
             <button
-              onClick={() => window.location.href='/citations'}
+              onClick={() => navigate('/citations')}
               className="px-8 py-4 text-2xl bg-pink-500 hover:bg-pink-600 text-white rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
               View Citations
